@@ -46,7 +46,7 @@
 	(((a)->s6_addr32[0] == 0) &&	\
 	 ((a)->s6_addr32[1] == 0) &&	\
 	 ((a)->s6_addr32[2] == 0) &&	\
-	 ((a)->s6_addr32[3] != 0)) &&	\
+	 ((a)->s6_addr32[3] != 0) &&	\
 	 ((a)->s6_addr32[3] != ntohl(1)))
 
 #define IN6_IS_ADDR_V4MAPPED(a)		\
