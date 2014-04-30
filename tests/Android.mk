@@ -38,6 +38,8 @@ test_cflags = \
     -Werror \
     -fno-builtin \
 
+test_cflags += -D__STDC_LIMIT_MACROS  # For glibc.
+
 libBionicStandardTests_src_files := \
     buffer_tests.cpp \
     ctype_test.cpp \
@@ -221,7 +223,7 @@ bionic-unit-tests_shared_libraries_target := \
 
 module := bionic-unit-tests
 module_tag := optional
-multilib := both
+bionic-unit-tests_multilib := both
 build_type := target
 build_target := NATIVE_TEST
 include $(LOCAL_PATH)/Android.build.mk
@@ -243,7 +245,7 @@ bionic-unit-tests-static_force_static_executable := true
 
 module := bionic-unit-tests-static
 module_tag := optional
-multilib := both
+bionic-unit-tests-static_multilib := both
 build_type := target
 build_target := NATIVE_TEST
 include $(LOCAL_PATH)/Android.build.mk
